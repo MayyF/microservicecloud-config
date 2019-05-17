@@ -4,7 +4,7 @@ spring:
 
 ---
 server:
-     port: 8001
+  port: 8001
 spring:
   profiles: dev
   application:
@@ -16,13 +16,14 @@ spring:
     driver-class-name: org.gjt.mm.mysql.Driver
     dbcp2:
       min-idle: 5
-     initial-size: 5
-     max-total: 5
-     max-wait-millis: 200 
+      initial-size: 5
+      max-total: 5
+      max-wait-millis: 200
 mybatis:
-  config-location: classpath:mybatis/mybatis.cfg.xml
+  configuration:
+    map-underscore-to-camel-case: true
   type-aliases-package: edu.sw.springcloud.entity
-  mapper-locations: classpath:mybatis/mapper/**/*.xml
+  mapper-locations: classpath:mybatis/mapper/**/*.xml
 eureka:
   client:
     service-url:
@@ -37,7 +38,6 @@ info:
   build.artifactId: ${project.artifactId}
   build.version: ${project.version}
 
-
 ---
 server:
   port: 8001
@@ -51,7 +51,7 @@ spring:
     password: root
     driver-class-name: org.gjt.mm.mysql.Driver
     dbcp2:
-      min-idle: 5
+     min-idle: 5
      initial-size: 5
      max-total: 5
      max-wait-millis: 200 
